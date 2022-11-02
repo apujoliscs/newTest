@@ -6,17 +6,9 @@ pipeline {
         sh 'python --version'
       }
     }
-    stage('Check PyTest Version') {
-      steps {
-        sh 'pip install allure-pytest'
-        sh 'pip install allure-python-commons'
-        sh 'pip install Appium-Python-Client'
-        sh 'pytest --version'
-      }
-    }
     stage ('COMSec Login Tests ->') {
       steps {
-        sh 'pytest appium_python/Resto/COMSec_LOGIN_test.py'
+        bat 'pytest appium_python/Resto/COMSec_LOGIN_test.py'
   }
 }
   }
